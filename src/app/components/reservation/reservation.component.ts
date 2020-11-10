@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Restaurant } from './../restaurants/restaurant/restaurant.model';
-import { RestaurantsService } from './../restaurants/restaurants-json.service';
+//import { RestaurantsService } from './../restaurants/restaurants-json.service';
+import { RestaurantsService } from '../restaurants/restaurants.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 
@@ -11,7 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ReservationComponent implements OnInit {
 
-    restaurants: Restaurant[] = [];
+    restaurants: any[] = [];
     filters: any = {};
     selectedFilters: {} = {
         category: '',
@@ -25,8 +26,16 @@ export class ReservationComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.restaurants = this.restaurantService.getAllRestaurants();
+        this.getAllRestaurants();
         this.filters = this.getFilterData();
+    }
+
+    getAllRestaurants(){
+        this.restaurantService.getAllRestaurants().
+        subscribe(res=> this.restaurants=res.data
+            .filter(x=>x!==undefined)
+            .map(x=>({...x, rating:3.7}))
+        );
     }
 
     getBGcolorForRating(rating: number): string {
@@ -66,7 +75,7 @@ export class ReservationComponent implements OnInit {
         Object.keys(this.selectedFilters).forEach(k => {
             this.selectedFilters[k] = '';
         });
-        this.restaurants = this.restaurantService.getAllRestaurants();
+        this.getAllRestaurants();
     }
 
     selectFilter(id: string, $event) {
@@ -103,7 +112,8 @@ export class ReservationComponent implements OnInit {
 
     filterRestaurants(type, name) {
         this.selectedFilters[type] = name;
-        this.restaurants = this.restaurantService.getAllRestaurants();
+        this.getAllRestaurants();
+
         if (this.selectedFilters['category'] !== '') {
             this.restaurants=this.restaurants.filter(x=>x.category === this.selectedFilters['category']);
         }

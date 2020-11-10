@@ -5,5 +5,5 @@
 
 export const environment = {
     production: false,
-    api: 'https://test-restaurantapiservice.pratian.com'
+    api: 'http://219.65.96.170:9087'
 };

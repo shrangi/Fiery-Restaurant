@@ -6,7 +6,7 @@ import {NotificationService} from '../../../shared/messages/notification.service
 @Injectable()
 export class ShoppingCartService {
 
-    items: CartItem[] = [];
+    items: any[] = [];
 
     constructor(private notificationService: NotificationService) {
     }
@@ -15,34 +15,34 @@ export class ShoppingCartService {
         this.items = [];
         this.notificationService.notify(`You have removed all menu items`);
     }
-
-    addItem(item: MenuItem) {
-        const foundItem = this.items.find((mItem) => mItem.menuItem.id === item.id);
+ 
+    addItem(item: any) {
+        const foundItem = this.items.find((mItem) => mItem.menuItem._id === item.id);
 
         if (foundItem) {
             this.increaseQtd(foundItem);
         } else {
             this.items.push(new CartItem(item));
         }
-        this.notificationService.notify(`You added the menu ${item.name}`);
+        this.notificationService.notify(`You added the menu ${item.itemTitle}`);
     }
 
 
-    increaseQtd(item: CartItem) {
+    increaseQtd(item: any) {
         item.quantity = item.quantity + 1;
     }
 
-    decreaseQtd(item: CartItem) {
+    decreaseQtd(item: any) {
         item.quantity = item.quantity - 1;
         if (item.quantity === 0) {
             this.removeItem(item);
         }
     }
 
-    removeItem(item: CartItem) {
-        console.log(`Removeu item: ${item.menuItem.name}`);
+    removeItem(item: any) {
+        console.log(`Removeu item: ${item.menuItem.itemTitle}`);
         this.items.splice(this.items.indexOf(item), 1);
-        this.notificationService.notify(`You have removed the ${item.menuItem.name}`);
+        this.notificationService.notify(`You have removed the ${item.menuItem.itemTitle}`);
     }
 
     total(): number {

@@ -1,8 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {Restaurant} from './../../restaurants/restaurant/restaurant.model';
-import {RestaurantsService} from './../../restaurants/restaurants-json.service';
+//import {RestaurantsService} from './../../restaurants/restaurants-json.service';
+import { RestaurantsService } from '../../restaurants/restaurants.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import {MenuItem} from './../../restaurants/restaurant-detail/menu-item/menu-item.model';
+
 
 @Component({
     selector: 'lacc-reservation-entry',
@@ -11,7 +13,7 @@ import {MenuItem} from './../../restaurants/restaurant-detail/menu-item/menu-ite
 })
 export class ReservationEntryComponent implements OnInit {
 
-    restaurant: Restaurant;
+    restaurant: any[];
     id:string;
     menu: MenuItem[];
 
@@ -21,8 +23,9 @@ export class ReservationEntryComponent implements OnInit {
 
     ngOnInit() {
         this.route.params.subscribe(params => this.id = params.id);
-        this.restaurant = this.restaurantService.getAllRestaurants().find(x=>x.id===this.id);
+        this.restaurantService.getAllRestaurants().subscribe(res=>this.restaurant=res.data.filter(x=>x!==undefined).map(x=>({...x, rating:3.7})).find(x=>x._id===this.id));
     }
+
 
     getBGcolorForRating(rating:number):string{
         return rating < 2.5 ? 'bg-red': (rating < 3.5 ? 'bg-orange' : 'bg-green');

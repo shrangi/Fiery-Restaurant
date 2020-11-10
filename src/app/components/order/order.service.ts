@@ -15,19 +15,19 @@ export class OrderService {
                 private http: HttpClient) {
     }
 
-    cartItems(): CartItem[] {
+    cartItems(): any[] {
         return this.shoppingCartService.items;
     }
 
-    increaseQtd(item: CartItem) {
+    increaseQtd(item: any) {
         this.shoppingCartService.increaseQtd(item);
     }
 
-    decreaseQtd(item: CartItem) {
+    decreaseQtd(item: any) {
         this.shoppingCartService.decreaseQtd(item);
     }
 
-    remove(item: CartItem) {
+    remove(item: any) {
         this.shoppingCartService.removeItem(item);
     }
 
@@ -35,7 +35,7 @@ export class OrderService {
         return this.shoppingCartService.total();
     }
 
-    checkOrder(order: Order): Observable<string> {
+    checkOrder(order: any): Observable<string> {
 
         const orderObs = new Observable<string>(observer =>{
             observer.next("abc");

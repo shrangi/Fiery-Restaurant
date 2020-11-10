@@ -13,16 +13,28 @@ export class RestaurantsService {
     constructor(private http: HttpClient) {
     }
 
-    getAllRestaurants(): Observable<Restaurant[]> {
-        return this.http.get<Restaurant[]>(`${RESTAURANT_API}/restaurants`);
+    getLocation(){
+        let position = {lat:null,long:null}
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition((pos)=>{
+                position.lat=pos.coords.latitude;
+                position.long=pos.coords.longitude;
+            },err=>(console.log(err.message)))
+        }
+        console.log(position);
+        
     }
 
-    getMenuOfRestaurant(id: string): Observable<MenuItem[]> {
-        return this.http.get<MenuItem[]>(`${RESTAURANT_API}/restaurants/${id}/menu`);
+    getAllRestaurants(): Observable<any> {
+        return this.http.get<Restaurant[]>(`${RESTAURANT_API}/api/v1/restaurants`);
+    }
+
+    getMenuOfRestaurant(id: string): Observable<any> {
+        return this.http.get<MenuItem[]>(`${RESTAURANT_API}/api/v1/menuitems/${id}`);
     }
 
 
-    getReviewsOfRestaurants(id: string): Observable<Review> {
-        return this.http.get<Review>(`${RESTAURANT_API}/restaurants/${id}/reviews`);
+    getReviewsOfRestaurants(id: string): Observable<any> {
+        return this.http.get<Review>(`${RESTAURANT_API}/api/v1/restaurants/${id}/reviews`);
     }
 }
