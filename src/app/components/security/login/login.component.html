@@ -38,6 +38,22 @@
                     required
                     placeholder="Password">
                 </lacc-input-container>
+                <lacc-input-container *ngIf="!isLoggedIn" [showTip]="false">
+                    <input type="text" 
+                    class="form-control" 
+                    ngModel
+                    name="city"
+                    required
+                    placeholder="City">
+                </lacc-input-container>
+                <lacc-input-container *ngIf="!isLoggedIn" [showTip]="false">
+                    <input type="text" 
+                    class="form-control" 
+                    ngModel
+                    name="country"
+                    required
+                    placeholder="Country">
+                </lacc-input-container>
 
                 <div class="row">
                     <!-- /.col -->

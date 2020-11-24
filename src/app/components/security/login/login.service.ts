@@ -38,12 +38,14 @@ export class LoginService {
             }));
     }
 
-    signUp(name:string, email: string, password: string): Observable<User> 
+    signUp(name:string, email: string, password: string,city:string,country:string): Observable<any> 
     {
         return this.http
-            .post<User>(`${RESTAURANT_API}/signUp`, {name:name,email: email, password: password})
+            
+            .post<any>(`${RESTAURANT_API}/api/v1/auth/register`, {userName:name,userEmail: email, userPassword: password,isRestaurant:false,userCity:city,userCountry:country})
             .pipe(tap(user => this.user = user));
     }
+
 
     isLoggedIn(): boolean 
     {

@@ -52,4 +52,47 @@ export class RestaurantsComponent implements OnInit {
     //     return this.reviews;
     // }
 
+    favourite:any[]=[];
+public toggleSelected(id:string,$event) {
+
+        let currentElement: any = $event.target || $event.srcElement;
+        
+        console.log(currentElement.classList)
+        if(currentElement.classList.contains('fa-heart-o'))
+        {  // Adding to favourite
+            currentElement.classList.remove('fa-heart-o')
+            currentElement.classList.add('fa-heart');
+        
+        }
+        else
+        { // Removing from favourite
+            currentElement.classList.remove('fa-heart')
+            currentElement.classList.add('fa-heart-o');
+            
+        }
+        
+       
+        if(!this.favourite.find(x => x === id)){
+            this.favourite.push(id);
+        }
+        else{
+            this.favourite.splice(this.favourite.findIndex(x=> x===id), 1)
+        }
+
+        console.log("added to fav",this.favourite);
+      }
+
+      showFavourite(){
+        console.log("inside show")
+        this.restaurants = this.restaurants.filter(x => this.favourite.find(y=> y === x._id) )
+        console.log(this.restaurants)
+
+    }
+
+    clearFilter() {
+        this.getAllRestaurants();
+        
+    }
 }
+
+
