@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
     navigateTo: string;
     isLoggedIn:boolean = true;
     logInObs:Observable<{success:boolean,token:string}>;
+    formBuilder: any;
 
     constructor(private fb: FormBuilder,
                 private loginServive: LoginService,
@@ -37,11 +38,13 @@ export class LoginComponent implements OnInit {
         {
             this.logInObs = this.loginServive
             .login(loginForm.value.email, loginForm.value.password);
+            console.log(this.loginServive)
         }
         else
         {
-            // this.logInObs = this.loginServive
-            // .signUp(loginForm.value.fullName,loginForm.value.email, loginForm.value.password);
+            this.logInObs = this.loginServive
+            .signUp(loginForm.value.fullName,loginForm.value.email, loginForm.value.password, loginForm.value.city, loginForm.value.country);
+
         }
         
         this.logInObs.subscribe(
