@@ -133,7 +133,7 @@ describe("restaurants service", function(){
         })
 
         const request = httpMock.expectOne(`
-        ${environment.mapbox_api}/${dummyLoc.lat},${dummyLoc.lng}.json?
+        ${environment.mapbox_api}/${dummyLoc.lng},${dummyLoc.lat}.json?
         access_token=${environment.mapbox_access_token}`)
 
         expect(request.request.method).toBe('GET')
