@@ -3,12 +3,24 @@
     <h3 class="head2">Choose Restaurant</h3>
   </div>
 
+  <div class="container">
+    <div class="col-lg-9 col-xs-9"></div>
+    <div class="col-lg-3 col-xs-3">
+      <div class="filter-card col-lg-12">
+          <span class="filter-title" (click)="showFavourite()">Show Favourite </span> <a class="pull-right red" (click)='clearFilter()'>clear all</a>
+          <hr>
+      </div>
+  </div>
+
   <div class="gallery1 row">
-    <div
-      class="col-lg-3 col-md-4 col-sm-6 col-xs-6 restaurant-grid"
-      *ngFor="let restaurant of restaurants.slice(0, 20)"
-    >
+    
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 restaurant-grid"
+      *ngFor="let restaurant of restaurants.slice(0, 20)">
       <lacc-restaurant [restaurant]="restaurant"></lacc-restaurant>
+      <div class="col-lg-4 col-xs-6 center">
+        <i class="fa fa-heart-o fa-2x"  (click)="toggleSelected(restaurant._id, $event)"></i><br><span id="add-favourite"></span>
+      </div>
+      
     </div>
   </div>
 </div>
