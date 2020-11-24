@@ -1,9 +1,12 @@
 <a [routerLink]="['/restaurants', restaurant._id]" class="gal">
   <img [src]="restaurant.userProfileImageUrl" alt="" /><span></span>
 </a>
-<div class="col2">
-  <span class="col3"
+<div class="col2 text-center">
+  <!-- col3 class -->
+  <span class=""
     ><a href="#">{{ restaurant.userName }}</a></span
   >
-  $ It runs from Monday to Friday, from {{ restaurant.TIMING }}
+  <br />
+  It runs from <br />
+  {{ restaurant.TIMING }}
 </div>

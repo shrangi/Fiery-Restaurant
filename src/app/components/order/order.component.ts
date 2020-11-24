@@ -71,25 +71,25 @@ export class OrderComponent implements OnInit {
         return this.orderService.itemsValue();
     }
 
-    cartItems(): CartItem[] {
+    cartItems(): any[] {
         return this.orderService.cartItems();
     }
 
-    decreaseQtd(item: CartItem) {
+    decreaseQtd(item: any) {
         return this.orderService.decreaseQtd(item);
     }
 
-    increaseQtd(item: CartItem) {
+    increaseQtd(item: any) {
         return this.orderService.increaseQtd(item);
     }
 
-    remove(item: CartItem) {
+    remove(item: any) {
         return this.orderService.remove(item);
     }
 
     checkOrder(order: Order) {
         order.orderItems = this.cartItems()
-            .map((item: CartItem) => new OrderItem(item.quantity, item.menuItem.id));
+            .map((item: any) => new OrderItem(item.quantity, item.menuItem._id));
 
         this.orderService.checkOrder(order)
             .pipe(

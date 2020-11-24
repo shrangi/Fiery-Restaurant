@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-lg-1 col-xs-1"></div>
     <div class="col-lg-7 col-xs-7">
-      <div class="restaurant-details-card">
+      <div class="restaurant-details-card" *ngIf="restaurant">
         <div class="col-lg-4 col-xs-4">
           <img [src]="restaurant.userProfileImageUrl" />
         </div>
@@ -23,15 +23,15 @@
         <div class="col-lg-2 col-xs-2 center">
           <span
             class="restaurant-rating label"
-            [ngClass]="getBGcolorForRating(restaurant.rating)"
+            [ngClass]="getBGcolorForRating(restaurant?.rating)"
           >
-            {{ restaurant.rating }} </span
+            {{ restaurant?.rating }} </span
           ><br />
-          <i class="fa" [ngClass]="getStarForRating(restaurant.rating, 1)"></i>
-          <i class="fa" [ngClass]="getStarForRating(restaurant.rating, 2)"></i>
-          <i class="fa" [ngClass]="getStarForRating(restaurant.rating, 3)"></i>
-          <i class="fa" [ngClass]="getStarForRating(restaurant.rating, 4)"></i>
-          <i class="fa" [ngClass]="getStarForRating(restaurant.rating, 5)"></i>
+          <i class="fa" [ngClass]="getStarForRating(restaurant?.rating, 1)"></i>
+          <i class="fa" [ngClass]="getStarForRating(restaurant?.rating, 2)"></i>
+          <i class="fa" [ngClass]="getStarForRating(restaurant?.rating, 3)"></i>
+          <i class="fa" [ngClass]="getStarForRating(restaurant?.rating, 4)"></i>
+          <i class="fa" [ngClass]="getStarForRating(restaurant?.rating, 5)"></i>
         </div>
       </div>
       <div class="fixed-tab center row">
@@ -64,24 +64,18 @@
       </div>
     </div>
     <div class="col-lg-3 col-xs-3">
-      <div class="hours-card">
+      <div class="hours-card" *ngIf="restaurant">
         <h3>Restaurant Hours:</h3>
         <br />
         <hr />
         <span class="time">Breakfast:</span
-        ><span class="pull-right">{{
-          restaurant.reservation.TIMING?.split(" ")[0]
-        }}</span
+        ><span class="pull-right">{{ restaurant.TIMING.split(" ")[0] }}</span
         ><br />
         <span class="time">Lunch:</span
-        ><span class="pull-right">{{
-          restaurant.reservation.TIMING?.split(" ")[1]
-        }}</span
+        ><span class="pull-right">{{ restaurant.TIMING.split(" ")[1] }}</span
         ><br />
         <span class="time">Dinner:</span
-        ><span class="pull-right">{{
-          restaurant.reservation.TIMING?.split(" ")[2]
-        }}</span
+        ><span class="pull-right">{{ restaurant.TIMING.split(" ")[2] }}</span
         ><br />
       </div>
     </div>

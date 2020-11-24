@@ -1,5 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpBackend, HttpClientModule} from '@angular/common/http';
+import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
+
 import {HashLocationStrategy, LocationStrategy, registerLocaleData} from '@angular/common';
 import {ErrorHandler, LOCALE_ID, NgModule} from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -65,7 +67,8 @@ import { OrdersComponent } from './components/orders/orders.component';
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
         {provide: LOCALE_ID, useValue: 'pt'},
-        {provide: ErrorHandler, useClass: ApplicationErrorHandler}
+        {provide: ErrorHandler, useClass: ApplicationErrorHandler},
+     
     ],
     bootstrap: [AppComponent]
 })

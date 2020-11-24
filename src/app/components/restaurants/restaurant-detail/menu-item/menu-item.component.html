@@ -6,7 +6,8 @@
     </div>
     {{ menuItem.itemIngredients }}
     <p class="col1">
-      <span></span>Price {{ menuItem.itemPrice | currency: "INR":"symbol" }}
+      <span></span>Price
+      {{ menuItem.itemPrice | currency: "₹ ":false:"2.0-0" }}
 
       <a (click)="emitAddEvent()"><i class="fa fa-plus-circle"></i> Add</a>
     </p>

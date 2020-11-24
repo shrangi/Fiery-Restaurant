@@ -16,8 +16,8 @@ import {RestaurantsService} from "./restaurants.service";
 export class RestaurantsComponent implements OnInit {
 
     restaurants: any[] = [];
-    menuItems: MenuItem[] = [];
-    reviews: Review[] = [];
+   // menuItems: MenuItem[] = [];
+   // reviews: Review[] = [];
 
     constructor(private restaurantService: RestaurantsService) {
     }
@@ -42,11 +42,14 @@ export class RestaurantsComponent implements OnInit {
         
     }
 
-    
+    getLocation(){
+        let coords = this.restaurantService.getLocation();
 
-
-    getReviewsOfRestaurants(id: string):Review[] {
-        return this.reviews;
+       // this.restaurantService.
     }
+
+    // getReviewsOfRestaurants(id: string):Review[] {
+    //     return this.reviews;
+    // }
 
 }

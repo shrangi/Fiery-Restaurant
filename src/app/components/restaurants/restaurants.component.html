@@ -3,8 +3,11 @@
     <h3 class="head2">Choose Restaurant</h3>
   </div>
 
-  <div class="div-tabs gallery1">
-    <div class="grid_3" *ngFor="let restaurant of restaurants.slice(0, 12)">
+  <div class="gallery1 row">
+    <div
+      class="col-lg-3 col-md-4 col-sm-6 col-xs-6 restaurant-grid"
+      *ngFor="let restaurant of restaurants.slice(0, 20)"
+    >
       <lacc-restaurant [restaurant]="restaurant"></lacc-restaurant>
     </div>
   </div>

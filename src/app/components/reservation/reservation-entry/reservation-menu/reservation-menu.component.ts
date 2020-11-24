@@ -26,7 +26,14 @@ export class ReservationMenuComponent implements OnInit {
        
           
         this.restaurantService.getMenuOfRestaurant(this.route.parent.snapshot.params['id'])
-        .subscribe(items=> this.menuItems=items.data, 
+        .subscribe(items=> {
+            let allItems = items.data;
+            let uniqueItems = []; 
+            allItems.forEach(item => {
+               if( !uniqueItems.find(el=> item.itemTitle==el.itemTitle))
+                    uniqueItems.push(item)
+            });
+            this.menuItems= uniqueItems; }, 
             err=>console.log("Cannot get all menuItems"));
    
     }

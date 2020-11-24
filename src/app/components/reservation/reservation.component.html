@@ -1,28 +1,55 @@
 <div class="content">
   <div class="row">
-    <div class="col-lg-2 col-xs-2"></div>
-    <div class="col-lg-10 col-xs-10">
-      <h2>Table reservation for the restaurants in Bangalore</h2>
+    <div class="col-lg-2 col-md-2 col-xs-2"></div>
+    <div class="col-lg-10 col-md-10 col-xs-10">
+      <div class="searchBar">
+        <select name="searchCat" id="searchCat">
+          <option value="restaurant" selected>Restaurant</option>
+          <option value="location">Location</option>
+          <option value="cuisine">Cuisine</option>
+        </select>
+
+        <input
+          type="text"
+          #searchBox
+          placeholder="Search for restaurant, location or cuisine"
+        />
+        <button
+          class="searchBtn bg-green"
+          (click)="filterRestaurantOnSearch(searchBox.value)"
+        >
+          Search
+        </button>
+      </div>
+      <h3>
+        Table reservation for the restaurants {{ " in " + filter }}
+        {{ searchBox.value }}
+      </h3>
     </div>
   </div>
   <div class="row">
-    <div class="col-lg-2 col-xs-2"></div>
-    <div class="col-lg-6 col-xs-6">
-      <div class="restaurant-card" *ngFor="let restaurant of restaurants">
+    <div class="col-lg-2 col-md-2 col-xs-1"></div>
+    <div class="col-lg-6 col-md-6 col-xs-10">
+      <div *ngIf="restaurants?.length === 0">
+        <h2>No restaurants Found for your search</h2>
+      </div>
+      <div
+        class="restaurant-card"
+        *ngFor="let restaurant of restaurants?.splice(0, 20)"
+      >
         <div class="col-lg-3 col-xs-3">
           <img [src]="restaurant.userProfileImageUrl" />
         </div>
         <div class="col-lg-6 col-xs-6">
           <span class="restaurant-type label"
-            >{{ restaurant.CUSINE_CATEGORY }}
+            >{{ restaurant.CUSINE_TYPE }}
           </span>
           <br />
           <span class="restaurant-title">{{ restaurant.userName }}</span
           ><br />
           <span class="restaurant-area">{{ restaurant.userregion }}</span
           ><br />
-          <span class="restaurant-address"
-            >{{ restaurant.address }} Address of Restaurant </span
+          <span class="restaurant-address">{{ restaurant.usercity }} </span
           ><br />
         </div>
         <div class="col-lg-3 col-xs-3 center">
@@ -47,7 +74,7 @@
           <div class="col-lg-9 col-xs-9">
             <span>{{ restaurant.CUSINE_CATEGORY }}</span
             ><br />
-            <span>{{ restaurant.TIMING }}</span
+            <span>{{ restaurant?.TIMING }}</span
             ><br />
           </div>
         </div>
@@ -75,7 +102,7 @@
         </div>
       </div>
     </div>
-    <div class="col-lg-3 col-xs-3">
+    <div class="col-lg-3 col-md-3 col-xs-10">
       <div class="filter-card col-lg-12">
         <span class="filter-title">Filters</span>
         <a class="pull-right red" (click)="clearFilter()">clear all</a>
@@ -144,6 +171,6 @@
         <br />
       </div>
     </div>
-    <div class="col-lg-1 col-xs-1"></div>
+    <div class="col-lg-1 col-md-1 col-xs-1"></div>
   </div>
 </div>

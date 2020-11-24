@@ -8,10 +8,10 @@ import {CartItem} from '../../restaurants/restaurant-detail/shopping-cart/cart-i
 })
 export class OrderItemsComponent implements OnInit {
 
-    @Input() items: CartItem[];
-    @Output() increaseQtd = new EventEmitter<CartItem>();
-    @Output() decreaseQtd = new EventEmitter<CartItem>();
-    @Output() remove = new EventEmitter<CartItem>();
+    @Input() items: any[];
+    @Output() increaseQtd = new EventEmitter<any>();
+    @Output() decreaseQtd = new EventEmitter<any>();
+    @Output() remove = new EventEmitter<any>();
 
     constructor() {
     }

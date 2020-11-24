@@ -8,7 +8,7 @@ import {MenuItem} from './menu-item.model';
 })
 export class MenuItemComponent implements OnInit {
 
-    @Input() menuItem: MenuItem;
+    @Input() menuItem: any;
     @Output() add = new EventEmitter();
 
     constructor() {
@@ -19,5 +19,7 @@ export class MenuItemComponent implements OnInit {
 
     emitAddEvent() {
         this.add.emit(this.menuItem);
+        console.log(this.menuItem);
+        
     }
 }

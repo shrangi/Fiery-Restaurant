@@ -1,29 +1,45 @@
-<header class="padding-top-zero">
-    <span class="pull-right padding-right-15px">
-        <lacc-user-detail></lacc-user-detail>
-    </span>
-    <div class="grid_7 pull-left">
-        <lacc-social-networtk></lacc-social-networtk>
+<header class="padding-top-zero row">
+  <span class="pull-right padding-right-15px col-md-3 col-sm-6 col-xs-5">
+    <lacc-user-detail></lacc-user-detail>
+  </span>
+  <div class="grid_7 pull-left col-md-3 col-sm-6 col-xs-5">
+    <lacc-social-networtk></lacc-social-networtk>
+  </div>
+  <div class="container padding-top-bottom-zero col-md-6 col-sm-6 col-xs-10">
+    <div class="row text-align-center">
+      <lacc-store-title></lacc-store-title>
+      <div class="menu_block">
+        <nav id="bt-menu" class="bt-menu" [class.bt-menu-open]="showMenu">
+          <a
+            href="javascript:void(0)"
+            (click)="openMenu()"
+            class="bt-menu-trigger"
+            ><span>Menu</span></a
+          >
+          <ul>
+            <li routerLinkActive="current" class="bt-icon">
+              <a [routerLink]="['restaurants']">Food</a>
+            </li>
+            <li routerLinkActive="current" class="bt-icon">
+              <a [routerLink]="['blog']">Blog</a>
+            </li>
+            <li routerLinkActive="current" class="bt-icon">
+              <a [routerLink]="['about']">About</a>
+            </li>
+            <li routerLinkActive="current" class="bt-icon">
+              <a [routerLink]="['reservation']">Reservation</a>
+            </li>
+            <li routerLinkActive="current" class="bt-icon">
+              <a [routerLink]="['contact']">Contacts</a>
+            </li>
+            <li routerLinkActive="current" class="bt-icon">
+              <a [routerLink]="['orders']">Orders</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="clear"></div>
+      </div>
+      <div class="clear"></div>
     </div>
-    <div class="container padding-top-bottom-zero">
-        
-        <div class="row text-align-center">
-            <lacc-store-title></lacc-store-title>
-            <div class="menu_block">
-                <nav id="bt-menu" class="bt-menu" [class.bt-menu-open]="showMenu">
-                    <a href="javascript:void(0)" (click)="openMenu()" class="bt-menu-trigger"><span>Menu</span></a>
-                    <ul>
-                        <li routerLinkActive="current" class="bt-icon"><a [routerLink]="['restaurants']">Food</a></li>
-                        <li routerLinkActive="current" class="bt-icon"><a [routerLink]="['blog']">Blog</a></li>
-                        <li routerLinkActive="current" class="bt-icon"><a [routerLink]="['about']">About</a></li>
-                        <li routerLinkActive="current" class="bt-icon"><a [routerLink]="['reservation']">Reservation</a></li>
-                        <li routerLinkActive="current" class="bt-icon"><a [routerLink]="['contact']">Contacts</a></li>
-                        <li routerLinkActive="current" class="bt-icon"><a [routerLink]="['orders']">Orders</a></li>
-                    </ul>
-                </nav>
-                <div class="clear"></div>
-            </div>
-            <div class="clear"></div>
-        </div>
-    </div>
+  </div>
 </header>

@@ -5,5 +5,7 @@
 
 export const environment = {
     production: false,
-    api: 'http://219.65.96.170:9087'
+    api: 'http://219.65.96.170:9087',
+    mapbox_api: 'https://api.mapbox.com/geocoding/v5/mapbox.places',
+    mapbox_access_token:'pk.eyJ1Ijoic2hyYW5naSIsImEiOiJja2hicWZhYTcwNzJqMnFxdGYxNWs5bXdrIn0.kD4Fw__DQ5a097EykssrmA'
 };

@@ -14,6 +14,7 @@ export class ReservationComponent implements OnInit {
 
     restaurants: any[] = [];
     filters: any = {};
+    searchBox: string;
     selectedFilters: {} = {
         category: '',
         location: '',
@@ -21,21 +22,82 @@ export class ReservationComponent implements OnInit {
         sort:''
     };
 
+    searchCat: any;
+    filter:string;
+    filterData: {}={
+        restaurant:'',
+        location:'',
+        cuisine:''
+    };
+
+    filterMap:{}={
+        restaurant:'userName',
+        location: 'usercity',
+        cuisine:'CUSINE_CATEGORY'
+    }
+
+    allRestaurants:any[];
+
     constructor(private restaurantService: RestaurantsService, private route: ActivatedRoute,
         private router: Router) {
+            this.restaurants=[];
     }
 
     ngOnInit() {
         this.getAllRestaurants();
         this.filters = this.getFilterData();
+        this.restaurantService.getLocation();
+        this.searchCat = document.getElementById('searchCat');
+        this.restaurants=[];
+        this.restaurants = Object.assign([],this.allRestaurants);
     }
 
-    getAllRestaurants(){
+     getAllRestaurants(){
         this.restaurantService.getAllRestaurants().
-        subscribe(res=> this.restaurants=res.data
+        subscribe(res=> {
+            this.allRestaurants=res.data
             .filter(x=>x!==undefined)
-            .map(x=>({...x, rating:3.7}))
-        );
+            .map(x=>({...x, rating:3.7}));
+            
+            this.restaurants = Object.assign([],this.allRestaurants);
+            }
+        )
+    }
+
+    // getFiltersData(){
+    //     this.restaurantService.getAllRestaurants().
+    //     subscribe(res=> this.restaurants=res.data
+    //         .map()
+    //     );
+    // }
+
+     filterRestaurantOnSearch(val: string){ 
+        this.filter = this.searchCat.options[this.searchCat.selectedIndex].value
+        if(val==null || val=="")
+         {    console.log("empty",val)
+              this.clearFilter();
+            return;
+         }
+
+        this.restaurants=Object.assign([],this.allRestaurants.filter(res=> res[this.filterMap[this.filter]].toLowerCase().includes(val.toLowerCase()) 
+        || res['userregion'].toLowerCase().includes(val.toLowerCase())));
+
+        if(this.restaurants.length<10){
+           let similarRes = this.allRestaurants.filter(res=> res[this.filterMap[this.filter]].toLowerCase().includes(val.toLowerCase()) 
+           || res['userregion'].toLowerCase().includes(val.toLowerCase())
+           || res['userName'].toLowerCase().includes(val.toLowerCase())
+           || res['CUSINE_CATEGORY'].toLowerCase().includes(val.toLowerCase())
+           || res['userCountry'].toLowerCase().includes(val.toLowerCase())
+           || res['CUSINE_TYPE'].toLowerCase().includes(val.toLowerCase())
+           || res['usercity'].toLowerCase().includes(val.toLowerCase())
+           )
+           
+           similarRes.forEach(simRes=>{
+              if( !this.restaurants.find(res=>simRes==res) ){
+                  this.restaurants.push(simRes);
+              }
+           })
+        }
     }
 
     getBGcolorForRating(rating: number): string {
@@ -66,6 +128,8 @@ export class ReservationComponent implements OnInit {
         }
         return className;
     }
+
+    
 
     clearFilter() {
         let activeElements: any = document.getElementsByClassName('filter-option');
@@ -127,5 +191,7 @@ export class ReservationComponent implements OnInit {
             this.restaurants = this.restaurants.sort((a,b)=>a[this.selectedFilters['sort'].toLowerCase()]-b[this.selectedFilters['sort'].toLowerCase()]);
         }
     }
+
+
 
 }
