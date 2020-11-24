@@ -1,11 +1,12 @@
 <div class="user-detail pull-left">
-    <span *ngIf="isLoggedIn(); else notLoggedIn">
-    Hello, {{ user().userName }} | <a (click)="logout()">Logout</a>
-</span>
+  <span *ngIf="isLoggedIn(); else notLoggedIn">
+    Hello, <span (click)="userProfile()"> {{ user().userName }} </span> |
+    <a (click)="logout()">Logout</a>
+  </span>
 
-<ng-template #notLoggedIn>
-    <a (click)="login()" class="login-user-detail pull-right">Login <i class="fa fa-sign-in"></i>
+  <ng-template #notLoggedIn>
+    <a (click)="login()" class="login-user-detail pull-right"
+      >Login <i class="fa fa-sign-in"></i>
     </a>
-</ng-template>
-
+  </ng-template>
 </div>

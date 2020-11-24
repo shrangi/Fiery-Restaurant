@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {LoginService} from '../../security/login/login.service';
 import {User} from '../../security/login/login.model';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'lacc-user-detail',
@@ -9,7 +10,7 @@ import {User} from '../../security/login/login.model';
 })
 export class UserDetailComponent implements OnInit {
 
-    constructor(private loginService: LoginService) {
+    constructor(private loginService: LoginService, private route: Router) {
     }
 
     ngOnInit() {
@@ -29,5 +30,8 @@ export class UserDetailComponent implements OnInit {
 
     logout() {
         this.loginService.logout();
+    }
+    userProfile(){
+        this.route.navigate(['profile'])
     }
 }

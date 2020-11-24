@@ -34,6 +34,7 @@ import { LoginComponent } from './components/security/login/login.component';
 import { UserDetailComponent } from './components/header/user-detail/user-detail.component';
 import { FormsModule } from '@angular/forms';
 import { OrdersComponent } from './components/orders/orders.component';
+import { UserProfileComponent } from './components/header/user-profile/user-profile.component';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { OrdersComponent } from './components/orders/orders.component';
         NotFoundComponent,
         LoginComponent,
         UserDetailComponent,
-        OrdersComponent
+        OrdersComponent,
+        UserProfileComponent
     ],
     imports: [
         BrowserModule,

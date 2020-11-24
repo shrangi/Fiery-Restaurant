@@ -1,0 +1,84 @@
+<div class="container user-profile" *ngIf="user">
+  <div class="row text-center">
+    <div class="col-md-4 col-xs-12">
+      <div class="row align-item-center">
+        <div class="user-profile-img"></div>
+      </div>
+    </div>
+    <div class="col-md-7 col-xs-10">
+      <div class="row">
+        <div class="user-title col-md-4 col-sm-6 col-xs-6">Name</div>
+        <div class="user-detail col-md-8 col-sm-6 col-xs-6" *ngIf="!isEdit">
+          {{ user.userName }}
+        </div>
+        <div class="user-detail col-md-8 col-sm-6 col-xs-6" *ngIf="isEdit">
+          <input type="text" [(ngModel)]="userEdited.name" #name />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="user-title col-md-4 col-sm-6 col-xs-6">Email</div>
+        <div class="user-detail col-md-8 col-sm-6 col-xs-6" *ngIf="!isEdit">
+          {{ user.userEmail }}
+        </div>
+        <div class="user-detail col-md-8 col-sm-6 col-xs-6" *ngIf="isEdit">
+          <input type="text" [(ngModel)]="userEdited.email" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="user-title col-md-4 col-sm-6 col-xs-6">Gender</div>
+        <div class="user-detail col-md-8 col-sm-6 col-xs-6">
+          {{ user.userGender }}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="user-title col-md-4 col-sm-6 col-xs-6">Age</div>
+        <div class="user-detail col-md-8 col-sm-6 col-xs-6">
+          {{ user.userAge }}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="user-title col-md-4 col-sm-6 col-xs-6 col-xs-6">City</div>
+        <div class="user-detail col-md-8 col-sm-6 col-xs-6 col-xs-6">
+          {{ user.userCity }}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="user-title col-md-4 col-sm-6 col-xs-6">Country</div>
+        <div class="user-detail col-md-8 col-sm-6 col-xs-6">
+          {{ user.userCountry }}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="user-title col-md-4 col-sm-6 col-xs-6"></div>
+        <div class="user-detail col-md-8 col-sm-6 col-xs-6">
+          <button
+            class="btn btn-danger"
+            (click)="isEdit = false"
+            style="margin-right: 20px"
+            [disabled]="!isEdit"
+          >
+            Cancel
+          </button>
+          <button
+            class="btn btn-primary"
+            (click)="updateProfile()"
+            [disabled]="!isEdit"
+            s
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-1 col-xs-2">
+      <span class="glyphicon glyphicon-pencil" (click)="isEdit = true"></span>
+    </div>
+  </div>
+</div>

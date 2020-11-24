@@ -1,0 +1,22 @@
+.user-profile {
+  background-color: whitesmoke;
+}
+
+.user-profile-img {
+  background-image: url("assets/images/page2_img2.jpg");
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.user-profile .user-title {
+  font-weight: bolder;
+}
+
+.user-profile .user-detail {
+  color: darkolivegreen;
+}
+
+.user-profile .row {
+  margin-bottom: 20px;
+}

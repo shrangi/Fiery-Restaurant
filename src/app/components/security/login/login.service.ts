@@ -56,7 +56,12 @@ export class LoginService {
     }
 
     logout() 
-    {
-        this.user = undefined;
+    { this.http.get(`${RESTAURANT_API}/api/v1/auth/logout`).subscribe(user=> this.user = undefined)
+    this.user = undefined;
+    this.router.navigate([''])
+    }
+
+    updateUser(userEdited:{ name: string; email: string; }){
+        return this.http.put(`${RESTAURANT_API}/api/v1/auth/update`, userEdited )
     }
 }

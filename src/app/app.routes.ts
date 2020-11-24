@@ -9,6 +9,7 @@ import {LoginComponent} from './components/security/login/login.component';
 import {LoggedInGuard} from './components/security/loggedin.guard';
 import { OrderComponent } from './components/order/order.component';
 import { OrdersComponent } from './components/orders/orders.component';
+import { UserProfileComponent } from './components/header/user-profile/user-profile.component';
 
 export const ROUTES: Routes = [
     {path: '', component: HomeComponent},
@@ -23,6 +24,7 @@ export const ROUTES: Routes = [
             {path: 'reviews', component: ReviewsComponent},
         ]
     },
+    {path: 'profile', component:UserProfileComponent },
     {path: 'restaurants', component: RestaurantsComponent},
     {
         path: 'order', loadChildren: './components/order/order.module#OrderModule',
