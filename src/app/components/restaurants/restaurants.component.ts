@@ -53,7 +53,7 @@ export class RestaurantsComponent implements OnInit {
     // }
 
     favourite:any[]=[];
-public toggleSelected(id:string,$event) {
+ toggleSelected(id:string,$event) {
 
         let currentElement: any = $event.target || $event.srcElement;
         
