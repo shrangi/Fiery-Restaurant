@@ -9,7 +9,6 @@ import {Router} from "@angular/router";
 import { ROUTES} from '../../../app.routes';
 import { HomeComponent } from '../../home/home.component';
 import { LoginComponent } from '../../security/login/login.component';
-
 import { RestaurantComponent } from '../../restaurants/restaurant/restaurant.component';
 import { RestaurantDetailComponent } from '../../restaurants/restaurant-detail/restaurant-detail.component';
 import { MenuComponent } from '../../restaurants/restaurant-detail/menu/menu.component';
