@@ -41,17 +41,16 @@ describe('RestaurantsComponent', () => {
   });
 
 
-  
-//   it('should add to favourtires', ()=>{
-//       let id = "Peru";
-//       //let favourite = [];
-//       const fixture = TestBed.createComponent(RestaurantsComponent);
-//       let component = fixture.debugElement.componentInstance;
-//       component.favourite = ["Peru"]
-//       spyOn( component, "toggleSelected")
-//       component.toggleSelected(id, {target:"fa fa-"})
-//       expect(component.favourite).toEqual([]);
-//   })
+  it('should add to favourtires', ()=>{
+      let id = "Peru";
+      //let favourite = [];
+      const fixture = TestBed.createComponent(RestaurantsComponent);
+      let component = fixture.debugElement.componentInstance;
+      component.favourite = ["Peru"]
+      spyOn( component, "toggleSelected")
+      component.toggleSelected(id, {target:"fa fa-"})
+      expect(component.favourite).toEqual([]);
+  })
 
   it('should show favourites', ()=>{
     const fixture = TestBed.createComponent(RestaurantsComponent);
