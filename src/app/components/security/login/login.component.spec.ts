@@ -40,12 +40,12 @@ beforeEach(async(() => {
   });
 
   
-  it ('should contain default value for the loginform', () =>{
-    component.loginForm.setValue({email: '', password: ''});
-    expect(component.loginForm.value).toContain({email: '', password: ''});
+  // it ('should contain default value for the loginform', () =>{
+  //   component.loginForm.setValue({email: '', password: ''});
+  //   expect(component.loginForm.value).toContain({email: '', password: ''});
     
 
-  })
+  // })
 
   
 
