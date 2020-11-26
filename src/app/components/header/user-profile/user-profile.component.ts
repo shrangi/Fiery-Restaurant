@@ -16,12 +16,9 @@ export class UserProfileComponent implements OnInit {
   isEdit: boolean;
   userEdited: { name: string, email: string };
 
-  constructor(private loginService: LoginService, private router: Router) { }
+  constructor(private loginService: LoginService) { }
 
   ngOnInit() {
-    if (!this.loginService.isLoggedIn())
-      this.router.navigate(['/login'])
-
     this.getUserData();
 
   }
@@ -30,7 +27,11 @@ export class UserProfileComponent implements OnInit {
     this.loginService.getUserData().subscribe(user => {
       this.user = user;
       this.userEdited = { "name": this.user.userName, "email": this.user.userEmail };
-    })
+    },
+    err=> {
+      console.log("Cannot find user details. Please login again")
+    },
+    ()=> console.log('Got user details'))
   }
 
 
@@ -39,7 +40,8 @@ export class UserProfileComponent implements OnInit {
       this.isEdit = false;
       this.getUserData();
       this.loginService.user.userName = this.userEdited.name;
-    })
+    },
+    err=> console.log("Error in updating profile, try a different name or email."))
   }
 
  

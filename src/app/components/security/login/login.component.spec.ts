@@ -37,7 +37,16 @@ beforeEach(async(() => {
 
   it('should create login component',()=>{
       expect(component).toBeTruthy();
+  });
+
+  
+  it ('should contain default value for the loginform', () =>{
+    component.loginForm.setValue({email: '', password: ''});
+    expect(component.loginForm.value).toContain({email: '', password: ''});
+    
+
   })
 
+  
 
 })

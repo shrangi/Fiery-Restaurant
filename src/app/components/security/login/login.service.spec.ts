@@ -30,6 +30,11 @@ describe('Login Service', ()=>{
         httpMock.verify();
     })
 
+    it('should create the Login Service', inject(    
+        [LoginService], (service: LoginService) => {
+        expect(service).toBeTruthy();
+      }));
+
     it('should accept all the necessary information for sign up via post method', ()=>{
        
         const dummyRes = 
@@ -46,8 +51,6 @@ describe('Login Service', ()=>{
                 
             }
             
-       
-
             service.signUp( dummyRes.userName, dummyRes.userEmail, dummyRes.userPassword, dummyRes.userCity, dummyRes.userCountry).subscribe(res=>{
         
             expect(res).toEqual(dummyRes)
@@ -59,5 +62,6 @@ describe('Login Service', ()=>{
 
     });
 
+    
 })
 
