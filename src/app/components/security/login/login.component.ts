@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
     isLoggedIn:boolean = true;
     logInObs:Observable<{success:boolean,token:string}>;
     formBuilder: any;
+    valid = false;
 
     constructor(private fb: FormBuilder,
                 private loginServive: LoginService,
@@ -33,6 +34,7 @@ export class LoginComponent implements OnInit {
     }
 
     login(loginForm:NgForm) {
+
 
         if(this.isLoggedIn)
         {
