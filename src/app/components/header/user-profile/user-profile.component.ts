@@ -31,7 +31,8 @@ export class UserProfileComponent implements OnInit {
     err=> {
       console.log("Cannot find user details. Please login again")
     },
-    ()=> console.log('Got user details'))
+    ()=> console.log('Got user details')
+    )
   }
 
 

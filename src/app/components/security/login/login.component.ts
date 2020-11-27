@@ -16,6 +16,7 @@ import { User } from './login.model';
 export class LoginComponent implements OnInit {
     submitted: any;
   onSubmit: any;
+  loginForm: any;
     authError(authError: any) {
       throw new Error("Method not implemented.");
     }
@@ -64,6 +65,7 @@ export class LoginComponent implements OnInit {
                 }
                 
             },       
+            
             response1 => this.notificationService.notify(response1.error.message)  
         );
         
