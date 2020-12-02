@@ -15,7 +15,7 @@ import {RestaurantsService} from "./restaurants.service";
 })
 export class RestaurantsComponent implements OnInit {
 
-    restaurants: any;
+    restaurants: any = [];
    // menuItems: MenuItem[] = [];
    // reviews: Review[] = [];
 

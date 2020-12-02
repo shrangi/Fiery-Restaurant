@@ -6,6 +6,7 @@ import { UserProfileComponent } from './user-profile.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
+import { NotificationService } from '../../shared/messages/notification.service';
 
 describe('UserProfileComponent', () => {
   let component: UserProfileComponent;
@@ -20,24 +21,37 @@ describe('UserProfileComponent', () => {
         HttpClientModule,
         RouterTestingModule
       ],
-      providers: [LoginService ],
+      providers: [LoginService, NotificationService ]
 
     })
     .compileComponents();
-  }));
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(UserProfileComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+
+    fixture.autoDetectChanges();
+
+  }));
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  it('save and cancel button should be disabled if user is not editing', ()=>{
-    let isEdit: Boolean= false;
-    
+  it('user edit option should be disabled by default', ()=>{
+    fixture.detectChanges();
+    expect(component.isEdit).toBeFalsy();
+  })
+
+  // it('user can edit profile after clicking on edit option', ()=>{
+  //   fixture.detectChanges();
+  //   let button = fixture.debugElement.nativeElement.querySelector('.glyphicon-pencil');
+  //   button.click();
+
+  //   fixture.detectChanges();
+
+  //   fixture.whenStable().then(() => {
+  //     expect(component.isEdit).toBeTruthy();
+  //   });
+   
   })
 });

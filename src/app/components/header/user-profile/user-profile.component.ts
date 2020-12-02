@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 
 import { User } from '../../security/login/login.model';
 import { LoginService } from '../../security/login/login.service';
+import { NotificationService } from '../../shared/messages/notification.service';
 
 @Component({
   selector: 'lacc-user-profile',
@@ -16,11 +17,11 @@ export class UserProfileComponent implements OnInit {
   isEdit: boolean;
   userEdited: { name: string, email: string };
 
-  constructor(private loginService: LoginService) { }
+  constructor(private loginService: LoginService, private notificationService: NotificationService) { }
 
   ngOnInit() {
     this.getUserData();
-
+    this.isEdit = false;
   }
 
   getUserData() {
@@ -28,9 +29,9 @@ export class UserProfileComponent implements OnInit {
       this.user = user;
      this.userEdited = { "name": this.user.userName, "email": this.user.userEmail };
     },
-    err=> {
+    err=> 
       console.log("Cannot find user details. Please login again")
-    },
+    ,
     ()=> console.log('Got user details')
     )
   }
@@ -40,12 +41,12 @@ export class UserProfileComponent implements OnInit {
     this.loginService.updateUser(this.userEdited).subscribe(response => {
       this.isEdit = false;
       this.getUserData();
-     // this.loginService.user.userName = this.userEdited.name;
+      this.loginService.user.userName = this.userEdited.name;
+      this.notificationService.notify("Profile updated successfully")
     },
-    err=> console.log("Error in updating profile, try a different name or email."))
+    err=> this.notificationService.notify("Error in updating profile, try a different Email.")
+    )
   }
-
- 
 
 
 }

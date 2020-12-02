@@ -15,7 +15,6 @@ describe("restaurants service", function(){
           providers: [RestaurantsService],
           imports: [
             HttpClientTestingModule,
-        
           ],
         });
 

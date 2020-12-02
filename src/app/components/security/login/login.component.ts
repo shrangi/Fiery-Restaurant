@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
         {
             this.logInObs = this.loginServive
             .login(loginForm.value.email, loginForm.value.password);
-            console.log(this.loginServive)
+            
         }
         else
         {
