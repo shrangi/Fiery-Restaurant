@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
         {
             this.logInObs = this.loginServive
             .login(loginForm.value.email, loginForm.value.password);
-            console.log(this.loginServive)
+            
         }
         else
         {
@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
                 }
                 
             },       
-            response1 => this.notificationService.notify(response1.error.message)  
+            response1 => {this.notificationService.notify("Failed to login"); }
         );
         
         loginForm.reset();

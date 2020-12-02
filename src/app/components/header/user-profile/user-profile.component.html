@@ -6,79 +6,114 @@
       </div>
     </div>
     <div class="col-md-7 col-xs-10">
-      <div class="row">
-        <div class="user-title col-md-4 col-sm-6 col-xs-6">Name</div>
-        <div class="user-detail col-md-8 col-sm-6 col-xs-6" *ngIf="!isEdit">
-          {{ user.userName }}
+      <form
+        #updateForm="ngForm"
+        (ngSubmit)="updateForm.form.valid && updateProfile()"
+      >
+        <div class="row">
+          <div class="user-title col-md-4 col-sm-6 col-xs-6">Name</div>
+          <div class="user-detail col-md-8 col-sm-6 col-xs-6" *ngIf="!isEdit">
+            {{ user.userName }}
+          </div>
+          <div class="user-detail col-md-8 col-sm-6 col-xs-6" *ngIf="isEdit">
+            <input
+              type="text"
+              [(ngModel)]="userEdited.name"
+              #name
+              required
+              name="name"
+            />
+          </div>
         </div>
-        <div class="user-detail col-md-8 col-sm-6 col-xs-6" *ngIf="isEdit">
-          <input type="text" [(ngModel)]="userEdited.name" #name />
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="user-title col-md-4 col-sm-6 col-xs-6">Email</div>
-        <div class="user-detail col-md-8 col-sm-6 col-xs-6" *ngIf="!isEdit">
-          {{ user.userEmail }}
+        <div class="row">
+          <div class="user-title col-md-4 col-sm-6 col-xs-6">Email</div>
+          <div class="user-detail col-md-8 col-sm-6 col-xs-6" *ngIf="!isEdit">
+            {{ user.userEmail }}
+          </div>
+          <div class="user-detail col-md-8 col-sm-6 col-xs-6" *ngIf="isEdit">
+            <input
+              type="email"
+              [(ngModel)]="userEdited.email"
+              required
+              name="email"
+              #email="ngModel"
+              [ngClass]="{ 'is-invalid': userEdited.email.invalid }"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+              title="Enter valid email address"
+            />
+          </div>
+          <div *ngIf="userEdited.email.invalid" class="alert alert-danger">
+            <div *ngIf="userEdited.email.errors.required">
+              Email is required.
+            </div>
+            <div *ngIf="userEdited.email.errors.minlength">
+              Email must be at least 4 characters long.
+            </div>
+            <div
+              *ngIf="
+                userEdited.email.errors.email || userEdited.email.errors.pattern
+              "
+            >
+              Enter a valid email Address
+            </div>
+          </div>
         </div>
-        <div class="user-detail col-md-8 col-sm-6 col-xs-6" *ngIf="isEdit">
-          <input type="text" [(ngModel)]="userEdited.email" />
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="user-title col-md-4 col-sm-6 col-xs-6">Gender</div>
-        <div class="user-detail col-md-8 col-sm-6 col-xs-6">
-          {{ user.userGender }}
+        <div class="row">
+          <div class="user-title col-md-4 col-sm-6 col-xs-6">Gender</div>
+          <div class="user-detail col-md-8 col-sm-6 col-xs-6">
+            {{ user.userGender }}
+          </div>
         </div>
-      </div>
 
-      <div class="row">
-        <div class="user-title col-md-4 col-sm-6 col-xs-6">Age</div>
-        <div class="user-detail col-md-8 col-sm-6 col-xs-6">
-          {{ user.userAge }}
+        <div class="row">
+          <div class="user-title col-md-4 col-sm-6 col-xs-6">Age</div>
+          <div class="user-detail col-md-8 col-sm-6 col-xs-6">
+            {{ user.userAge }}
+          </div>
         </div>
-      </div>
 
-      <div class="row">
-        <div class="user-title col-md-4 col-sm-6 col-xs-6 col-xs-6">City</div>
-        <div class="user-detail col-md-8 col-sm-6 col-xs-6 col-xs-6">
-          {{ user.userCity }}
+        <div class="row">
+          <div class="user-title col-md-4 col-sm-6 col-xs-6 col-xs-6">City</div>
+          <div class="user-detail col-md-8 col-sm-6 col-xs-6 col-xs-6">
+            {{ user.userCity }}
+          </div>
         </div>
-      </div>
 
-      <div class="row">
-        <div class="user-title col-md-4 col-sm-6 col-xs-6">Country</div>
-        <div class="user-detail col-md-8 col-sm-6 col-xs-6">
-          {{ user.userCountry }}
+        <div class="row">
+          <div class="user-title col-md-4 col-sm-6 col-xs-6">Country</div>
+          <div class="user-detail col-md-8 col-sm-6 col-xs-6">
+            {{ user.userCountry }}
+          </div>
         </div>
-      </div>
 
-      <div class="row">
-        <div class="user-title col-md-4 col-sm-6 col-xs-6"></div>
-        <div class="user-detail col-md-8 col-sm-6 col-xs-6">
-          <button
-            class="btn btn-danger"
-            (click)="isEdit = false"
-            style="margin-right: 20px"
-            [disabled]="!isEdit"
-          >
-            Cancel
-          </button>
-          <button
-            class="btn btn-primary"
-            (click)="updateProfile()"
-            [disabled]="!isEdit"
-            s
-          >
-            Save
-          </button>
+        <div class="row">
+          <div class="user-title col-md-4 col-sm-6 col-xs-6"></div>
+          <div class="user-detail col-md-8 col-sm-6 col-xs-6">
+            <button
+              class="btn btn-danger"
+              (click)="isEdit = false"
+              style="margin-right: 20px"
+              [disabled]="!isEdit"
+              type="button"
+            >
+              Cancel
+            </button>
+            <button class="btn btn-primary" type="submit" [disabled]="!isEdit">
+              Save
+            </button>
+          </div>
         </div>
-      </div>
+      </form>
     </div>
 
     <div class="col-md-1 col-xs-2">
-      <span class="glyphicon glyphicon-pencil" (click)="isEdit = true"></span>
+      <span
+        class="glyphicon glyphicon-pencil"
+        id="editOption"
+        (click)="isEdit = true"
+      ></span>
     </div>
   </div>
 </div>
