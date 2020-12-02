@@ -13,7 +13,7 @@ import {MenuItem} from './../../restaurants/restaurant-detail/menu-item/menu-ite
 })
 export class ReservationEntryComponent implements OnInit {
 
-    restaurant: any[];
+    restaurant: any;
     id:string;
     menu: MenuItem[];
 

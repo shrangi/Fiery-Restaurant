@@ -38,7 +38,7 @@ button:disabled{
 
 .blog-img{
     width: 50%;
-    align-self: ;
+    align-self: auto;
     position: relative;
     left: 25%;
 }

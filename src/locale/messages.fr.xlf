@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="headermagna" datatype="html">
+        <source>magna non nunc</source>
+        <target>magna non nunc</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/home/home.component.ts</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <note priority="1" from="description">description for magna non nunc </note>
+        <note priority="1" from="meaning">header for magna non nunc</note>
+      </trans-unit>
+      <trans-unit id="headerterto" datatype="html">
+        <source>terto nomino</source>
+          <target>terto nomino</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/home/home.component.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <note priority="1" from="description">description for terto nomino</note>
+        <note priority="1" from="meaning">header for terto nomino</note>
+      </trans-unit>
+      <trans-unit id="headermetus" datatype="html">
+        <source>metus feugiat</source>
+          <target>metus feugiat</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/home/home.component.ts</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <note priority="1" from="description">description for metus feugiat</note>
+        <note priority="1" from="meaning">header for metus feugiat</note>
+      </trans-unit>
+      <trans-unit id="headerNewMenu" datatype="html">
+        <source>New in Menu</source>
+          <target>Nouveau dans le menu</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/home/home.component.ts</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <note priority="1" from="description">description for New in Menu</note>
+        <note priority="1" from="meaning">header for New in Menu</note>
+      </trans-unit>
+      <trans-unit id="Lorem" datatype="html">
+        <source>Lorem Ipsum</source>
+          <target>Lorem Ipsum</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/home/home.component.ts</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+        <note priority="1" from="description">description for Lorem Ipsum</note>
+        <note priority="1" from="meaning">card header for Lorem Ipsum</note>
+      </trans-unit>
+      <trans-unit id="headerLorem" datatype="html">
+        <source>
+
+          Integer convallis orci vel mi nelaoreet, at ornare lorem consequat.
+        Phasellus era nisl auctor vel veliterol.
+        </source>
+          <target>Integer convallis orci vel mi nelaoreet, à ornare lorem conséquat.
+        Phasellus ère nisl auctor velvéliterol</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/home/home.component.ts</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+        <note priority="1" from="description">description for Lorem Ipsum</note>
+        <note priority="1" from="meaning">header for Lorem Ipsum</note>
+      </trans-unit>
+      <trans-unit id="LoremMoreInfo" datatype="html">
+        <source>More Info</source>
+          <target>Plus d'informations </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/home/home.component.ts</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+        <note priority="1" from="description">description for Lorem IpsumMore Info</note>
+        <note priority="1" from="meaning">header for Lorem Ipsum More Info</note>
+      </trans-unit>
+      <trans-unit id="Aliquamh" datatype="html">
+        <source>Aliquamh ante</source>
+          <target>Aliquamh ante </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/home/home.component.ts</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+        <note priority="1" from="description">description for Aliquamh ante</note>
+        <note priority="1" from="meaning">card header for Aliquamh ante</note>
+      </trans-unit>
+      <trans-unit id="headerAliquamh ante" datatype="html">
+        <source> Benteger convallis orci veli elaoreet, at ornare loremo konsequat.
+          Phasellus era nisl auctor vel veliterut.</source>
+            <target>Benteger Convallis Orci Veli Elaoreet, à Ornare Loremo Konsequat.
+          Phasellus era nisl auctor vel veliterut.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/home/home.component.ts</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+        <note priority="1" from="description">description for Aliquamh ante</note>
+        <note priority="1" from="meaning">header for Aliquamh ante</note>
+      </trans-unit>
+      <trans-unit id="headerAliquamhMoreInfo" datatype="html">
+        <source>More Info</source>
+          <target>Plus d'informations</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/home/home.component.ts</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+        <note priority="1" from="description">description for Aliquamh ante More Info</note>
+        <note priority="1" from="meaning">header for Aliquamh ante More Info</note>
+      </trans-unit>
+      <trans-unit id="headerUlum" datatype="html">
+        <source>Ulum volutpat</source>
+          <target>Ulum volutpat</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/home/home.component.ts</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+        <note priority="1" from="description">description for Ulum volutpat</note>
+        <note priority="1" from="meaning">card header for Ulum volutpat</note>
+      </trans-unit>
+      <trans-unit id="Ulum" datatype="html">
+        <source>Hrtolieger convallis omi tem aore, at ornare loren coate. Pasellus era
+          nisl auctor vel veliterolsed pharetra.</source>
+            <target>Hrtolieger convallis omi tem aore, à Ornare Loren Coate. Ère Pasellus
+          nisl auctor vel veliterolsed pharetra.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/home/home.component.ts</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+        <note priority="1" from="description">description for Ulum volutpat</note>
+        <note priority="1" from="meaning">header for Ulum volutpat</note>
+      </trans-unit>
+      <trans-unit id="headerUlumMore" datatype="html">
+        <source>More Info</source>
+          <target>Plus d'informations</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/home/home.component.ts</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+        <note priority="1" from="description">description for Ulum volutpat More Info</note>
+        <note priority="1" from="meaning">header for Ulum volutpat More Info</note>
+      </trans-unit>
+      <trans-unit id="Vestibulum" datatype="html">
+        <source>Vestibulum volu</source>
+          <target>Vestibulum volu</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/home/home.component.ts</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+        <note priority="1" from="description">description for Vestibulum volu</note>
+        <note priority="1" from="meaning">card header for Vestibulum volu</note>
+      </trans-unit>
+      <trans-unit id="headerVestibulum" datatype="html">
+        <source>Convallis orci vel mi oreet, at kotornare lorem consequat. Sellus era
+          nisl auctor vel veliterolvenenatis nulla.</source>
+            <target>Convallis orci vel mi oreet, à kotornare lorem conséquat. Ère Sellus
+          nisl auctor vel veliterolvenenatis nulla.</target>>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/home/home.component.ts</context>
+          <context context-type="linenumber">67</context>
+        </context-group>
+        <note priority="1" from="description">description for Vestibulum volu</note>
+        <note priority="1" from="meaning">header for Vestibulum volu</note>
+      </trans-unit>
+      <trans-unit id="VestibulumMoreInfo" datatype="html">
+        <source>More Info</source>
+          <target>Plus d'informations</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/home/home.component.ts</context>
+          <context context-type="linenumber">70</context>
+        </context-group>
+        <note priority="1" from="description">description for Vestibulum volu More Info</note>
+        <note priority="1" from="meaning">header for Vestibulum volu More Info</note>
+      </trans-unit>
+      <trans-unit id="a8e97c07f63651cb0eb95232a5584298659564d0" datatype="html">
+        <source>The Best of Professionals</source>
+          <target>Le meilleur des professionnels</target>
+        
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/restaurants/restaurant-detail/chefs/chefs.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

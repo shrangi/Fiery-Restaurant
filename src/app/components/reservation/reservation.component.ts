@@ -12,7 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ReservationComponent implements OnInit {
 
-    restaurants: any[] = [];
+    restaurants: any;
     filters: any = {};
     searchBox: string;
     selectedFilters: {} = {
@@ -36,7 +36,7 @@ export class ReservationComponent implements OnInit {
         cuisine:'CUSINE_CATEGORY'
     }
 
-    allRestaurants:any[];
+    allRestaurants:any;
 
     constructor(private restaurantService: RestaurantsService, private route: ActivatedRoute,
         private router: Router) {

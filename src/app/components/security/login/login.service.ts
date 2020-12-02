@@ -59,7 +59,7 @@ export class LoginService {
 
     logout() 
     { this.http.get(`${RESTAURANT_API}/api/v1/auth/logout`).subscribe(user=> this.user = undefined)
-    this.user = undefined;
+    // this.user = undefined;
     this.router.navigate([''])
     }
 

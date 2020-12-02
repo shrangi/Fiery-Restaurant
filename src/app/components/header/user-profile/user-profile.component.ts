@@ -26,7 +26,7 @@ export class UserProfileComponent implements OnInit {
   getUserData() {
     this.loginService.getUserData().subscribe(user => {
       this.user = user;
-      this.userEdited = { "name": this.user.userName, "email": this.user.userEmail };
+     this.userEdited = { "name": this.user.userName, "email": this.user.userEmail };
     },
     err=> {
       console.log("Cannot find user details. Please login again")
@@ -40,7 +40,7 @@ export class UserProfileComponent implements OnInit {
     this.loginService.updateUser(this.userEdited).subscribe(response => {
       this.isEdit = false;
       this.getUserData();
-      this.loginService.user.userName = this.userEdited.name;
+     // this.loginService.user.userName = this.userEdited.name;
     },
     err=> console.log("Error in updating profile, try a different name or email."))
   }
