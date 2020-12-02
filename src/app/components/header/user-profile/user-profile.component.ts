@@ -32,6 +32,8 @@ export class UserProfileComponent implements OnInit {
     },
     err=> 
       console.log("Cannot find user details. Please login again")
+    ,
+    ()=> console.log('Got user details')
     )
   }
 
@@ -46,8 +48,6 @@ export class UserProfileComponent implements OnInit {
     err=> this.notificationService.notify("Error in updating profile, try a different Email.")
     )
   }
-
- 
 
 
 }

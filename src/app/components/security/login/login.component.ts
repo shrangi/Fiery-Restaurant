@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, NgForm} from '@angular/forms';
+import {FormBuilder, FormGroup, NgForm, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 
 import {LoginService} from './login.service';
@@ -14,6 +14,12 @@ import { User } from './login.model';
     styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+    submitted: any;
+  onSubmit: any;
+  loginForm: any;
+    authError(authError: any) {
+      throw new Error("Method not implemented.");
+    }
 
     navigateTo: string;
     isLoggedIn:boolean = true;
@@ -31,6 +37,7 @@ export class LoginComponent implements OnInit {
     ngOnInit() {
 
         this.navigateTo = this.activateRouter.snapshot.params['to'] || btoa('/');
+        
     }
 
     login(loginForm:NgForm) {
@@ -58,7 +65,8 @@ export class LoginComponent implements OnInit {
                 }
                 
             },       
-            response1 => {this.notificationService.notify("Failed to login"); }
+            
+            response1 => this.notificationService.notify(response1.error.message)  
         );
         
         loginForm.reset();
@@ -78,4 +86,7 @@ export class LoginComponent implements OnInit {
     switchMode(){
         this.isLoggedIn = !this.isLoggedIn;
     }
+
+    
+    
 }

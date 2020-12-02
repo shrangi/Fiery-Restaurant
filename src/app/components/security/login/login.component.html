@@ -24,10 +24,23 @@
             class="form-control"
             ngModel
             name="fullName"
-            #fullName
+            #fullName="ngModel"
+            [ngClass]="{ 'is-invalid': fullName.invalid }"
             required
+            minlength="3"
             placeholder="Full Name"
+            pattern="[a-zA-Z ]*"
+            title=" invalid pattern"
           />
+          <div *ngIf="fullName.invalid && (fullName.dirty || fullName.touched)" class="alert alert-danger">
+            <div *ngIf="fullName.errors.required">fullName is required.</div>
+            <div *ngIf="fullName.errors.minlength">
+              fullName must be at least 3 characters long.
+            </div>
+            <div *ngIf="fullName.errors.pattern">
+                Numbers and special characters are not allowded.
+            </div>
+          </div>
         </lacc-input-container>
 
         <lacc-input-container [showTip]="false">
@@ -44,7 +57,7 @@
             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
             title=" invalid pattern"
           />
-          <div *ngIf="email.invalid" class="alert alert-danger">
+          <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
             <div *ngIf="email.errors.required">email is required.</div>
             <div *ngIf="email.errors.minlength">
               email must be at least 4 characters long.
@@ -65,8 +78,17 @@
             ngModel
             name="password"
             required
+            
             placeholder="Password"
-          />
+           />
+           <!-- <div *ngIf="password.invalid" class="alert alert-danger">
+            <div *ngIf="password.errors.required">password is required.</div>
+            <div *ngIf="password.errors.minlength">
+                password must 8 characters long.
+            </div> 
+           pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%?&])[A-Za-z\d$@$!%?&]$"
+          </div>  -->
+
         </lacc-input-container>
         <lacc-input-container *ngIf="!isLoggedIn" [showTip]="false">
           <input
@@ -74,9 +96,23 @@
             class="form-control"
             ngModel
             name="city"
+            #city="ngModel"
+            [ngClass]="{ 'is-invalid': city.invalid }"
             required
+            minlength="3"
             placeholder="City"
+            pattern="[a-zA-Z ]*"
+            title=" invalid pattern"
           />
+          <div *ngIf="city.invalid && (city.dirty || city.touched)" class="alert alert-danger">
+            <div *ngIf="city.errors.required">city is required.</div>
+            <div *ngIf="city.errors.minlength">
+              city must be at least 3 characters long.
+            </div>
+            <div *ngIf="city.errors.pattern">
+                Numbers and special characters are not allowded.
+            </div>
+          </div>
         </lacc-input-container>
         <lacc-input-container *ngIf="!isLoggedIn" [showTip]="false">
           <input
@@ -84,9 +120,24 @@
             class="form-control"
             ngModel
             name="country"
+            #country="ngModel"
+            [ngClass]="{ 'is-invalid': country.invalid }"
             required
-            placeholder="Country"
+            minlength="3"
+            placeholder="country"
+            pattern="[a-zA-Z ]*"
+            title=" invalid pattern"
           />
+          <div *ngIf="country.invalid && (country.dirty || country.touched)" class="alert alert-danger">
+            <div *ngIf="country.errors.required">country is required.</div>
+            <div *ngIf="country.errors.minlength">
+                country must be at least 3 characters long.
+            </div>
+            <div *ngIf="country.errors.pattern">
+                Numbers and special characters are not allowded.
+            </div>
+          </div>
+
         </lacc-input-container>
 
         <div class="row">
