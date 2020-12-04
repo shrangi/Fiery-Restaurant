@@ -152,6 +152,223 @@
         <note priority="1" from="description">description for Vestibulum volu More Info</note>
         <note priority="1" from="meaning">header for Vestibulum volu More Info</note>
       </trans-unit>
+      <trans-unit id="addresstitle" datatype="html">
+        <source>Address</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/contact/contact.component.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <note priority="1" from="description">description foraddresstitle</note>
+        <note priority="1" from="meaning">header for addresstitle</note>
+      </trans-unit>
+      <trans-unit id="headerAddress" datatype="html">
+        <source>The Company Name Inc. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+                            8901 Marmora Road,<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+                            Glasgow, D04 89GR.
+                        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/contact/contact.component.ts</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <note priority="1" from="description">description for Address</note>
+        <note priority="1" from="meaning">header for Address</note>
+      </trans-unit>
+      <trans-unit id="Freephone" datatype="html">
+        <source>Freephone:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/contact/contact.component.ts</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <note priority="1" from="description">description for Freephone</note>
+        <note priority="1" from="meaning">header for Freephone</note>
+      </trans-unit>
+      <trans-unit id="Telephone" datatype="html">
+        <source>Telephone:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/contact/contact.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <note priority="1" from="description">description for Telephone</note>
+        <note priority="1" from="meaning">header for Telephone</note>
+      </trans-unit>
+      <trans-unit id="Fax" datatype="html">
+        <source>FAX:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/contact/contact.component.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <note priority="1" from="description">description for Fax</note>
+        <note priority="1" from="meaning">header for Fax</note>
+      </trans-unit>
+      <trans-unit id="Emailtitle" datatype="html">
+        <source>E-mail: <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>mail@demolink.org<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/contact/contact.component.ts</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <note priority="1" from="description">description for Emailtitle</note>
+        <note priority="1" from="meaning">header for Emailtitle</note>
+      </trans-unit>
+      <trans-unit id="Skypetitle" datatype="html">
+        <source>Skype:<x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>@skypename<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/contact/contact.component.ts</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <note priority="1" from="description">description for Skypetitle</note>
+        <note priority="1" from="meaning">header for Skypetitle</note>
+      </trans-unit>
+      <trans-unit id="service" datatype="html">
+        <source>We’re glad to provide support services for all <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/><x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p&gt;"/>premium
+                    designs<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p&gt;"/><x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>
+                    that we produce. The goodies that are available for free (free templates) go without support. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/contact/contact.component.ts</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <note priority="1" from="description">description for service</note>
+        <note priority="1" from="meaning">header for service</note>
+      </trans-unit>
+      <trans-unit id="ContactForm" datatype="html">
+        <source>Contact Form</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/contact/contact.component.ts</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+        <note priority="1" from="description">description for Contact Form</note>
+        <note priority="1" from="meaning">header for Contact Form</note>
+      </trans-unit>
+      <trans-unit id="ContactFormSubmitted" datatype="html">
+        <source>Contact form submitted</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/contact/contact.component.ts</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+        <note priority="1" from="description">description for Contact submitted</note>
+        <note priority="1" from="meaning">header for Contact submitted</note>
+      </trans-unit>
+      <trans-unit id="616e206cb4f25bd5885fc35925365e43cf5fb929" datatype="html">
+        <source>Name:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/contact/contact.component.ts</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+        <note priority="1" from="description">From placeholder</note>
+      </trans-unit>
+      <trans-unit id="namerequired" datatype="html">
+        <source>*This field is required.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/contact/contact.component.ts</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+        <note priority="1" from="description">description for name required</note>
+        <note priority="1" from="meaning">header for name required</note>
+      </trans-unit>
+      <trans-unit id="namenotvalid" datatype="html">
+        <source>*This is not a valid name.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/contact/contact.component.ts</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+        <note priority="1" from="description">description for name not valid</note>
+        <note priority="1" from="meaning">header for name not valid</note>
+      </trans-unit>
+      <trans-unit id="485aea92f94ccf8d3176304df626aedd25aca92b" datatype="html">
+        <source>E-mail:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/contact/contact.component.ts</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+        <note priority="1" from="description">From placeholder</note>
+      </trans-unit>
+      <trans-unit id="emailrequired" datatype="html">
+        <source>*This field is required.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/contact/contact.component.ts</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+        <note priority="1" from="description">description for email required</note>
+        <note priority="1" from="meaning">header for email required</note>
+      </trans-unit>
+      <trans-unit id="emailnotvalid" datatype="html">
+        <source>*This is not a valid email.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/contact/contact.component.ts</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+        <note priority="1" from="description">description for email not valid</note>
+        <note priority="1" from="meaning">header for email not valid</note>
+      </trans-unit>
+      <trans-unit id="3a56771d1062b04a2b362d5ed1da622659afae7b" datatype="html">
+        <source>Phone:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/contact/contact.component.ts</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+        <note priority="1" from="description">From placeholder</note>
+      </trans-unit>
+      <trans-unit id="phonerequired" datatype="html">
+        <source>*This field is required.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/contact/contact.component.ts</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+        <note priority="1" from="description">description for phone required</note>
+        <note priority="1" from="meaning">header for phone required</note>
+      </trans-unit>
+      <trans-unit id="phonenotvalid" datatype="html">
+        <source>*This is not a valid phone.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/contact/contact.component.ts</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+        <note priority="1" from="description">description for phone not valid</note>
+        <note priority="1" from="meaning">header for phone not valid</note>
+      </trans-unit>
+      <trans-unit id="8865ed3834a850ae6123ce54f380aac3f0b88fe2" datatype="html">
+        <source>Message:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/contact/contact.component.ts</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+        <note priority="1" from="description">From placeholder</note>
+      </trans-unit>
+      <trans-unit id="messagerequired" datatype="html">
+        <source>*This field is required.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/contact/contact.component.ts</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+        <note priority="1" from="description">description for message required</note>
+        <note priority="1" from="meaning">header for message required</note>
+      </trans-unit>
+      <trans-unit id="messageShort" datatype="html">
+        <source>*The message is too short.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/contact/contact.component.ts</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+        <note priority="1" from="description">description for message to short</note>
+        <note priority="1" from="meaning">header for message to short</note>
+      </trans-unit>
+      <trans-unit id="formClear" datatype="html">
+        <source>Clear</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/contact/contact.component.ts</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+        <note priority="1" from="description">description for clear</note>
+        <note priority="1" from="meaning">header for clear</note>
+      </trans-unit>
+      <trans-unit id="formSend" datatype="html">
+        <source>Send</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/contact/contact.component.ts</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+        <note priority="1" from="description">description for Send</note>
+        <note priority="1" from="meaning">header for Send</note>
+      </trans-unit>
       <trans-unit id="a8e97c07f63651cb0eb95232a5584298659564d0" datatype="html">
         <source>The Best of Professionals</source>
         <context-group purpose="location">

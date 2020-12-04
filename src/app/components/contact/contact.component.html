@@ -2,26 +2,26 @@
     <div class="container_12">
         <div class="clear"></div>
         <div class="grid_4">
-            <h3 class="head3">Address</h3>
+            <h3 class="head3" i18n="header for addresstitle|description foraddresstitle@@addresstitle">Address</h3>
             <div class="map">
 
 
                 <address>
                     <dl>
-                        <dt>The Company Name Inc. <br>
+                        <dt i18n="header for Address|description for Address@@headerAddress">The Company Name Inc. <br>
                             8901 Marmora Road,<br>
                             Glasgow, D04 89GR.
                         </dt>
-                        <dd><span>Freephone:</span>+1 800 559 6580</dd>
-                        <dd><span>Telephone:</span>+1 800 603 6035</dd>
-                        <dd><span>FAX:</span>+1 800 889 9898</dd>
-                        <dd>E-mail: <a href="#" class="col2">mail@demolink.org</a></dd>
-                        <dd>Skype: <a href="#" class="col2">@skypename</a></dd>
+                        <dd><span i18n="header for Freephone|description for Freephone@@Freephone">Freephone:</span>+1 800 559 6580</dd>
+                        <dd><span i18n="header for Telephone|description for Telephone@@Telephone">Telephone:</span>+1 800 603 6035</dd>
+                        <dd><span i18n="header for Fax|description for Fax@@Fax">FAX:</span>+1 800 889 9898</dd>
+                        <dd i18n="header for Emailtitle|description for Emailtitle@@Emailtitle">E-mail: <a href="#" class="col2">mail@demolink.org</a></dd>
+                        <dd i18n="header for Skypetitle|description for Skypetitle@@Skypetitle">Skype:<a href="#" class="col2">@skypename</a></dd>
                     </dl>
                 </address>
-                <p>We’re glad to provide support services for all <a
-                        href="http://www.templatemonster.com/website-templates.php" rel="nofollow" class="col2">premium
-                    designs</a>
+                <p i18n="header for service|description for service@@service">We’re glad to provide support services for all <a
+                        href="http://www.templatemonster.com/website-templates.php" rel="nofollow" class="col2"><p>premium
+                    designs</p></a>
                     that we produce. The goodies that are available for free (free templates) go without support. </p>
                 If you’re looking for some professionals to help you polish the chosen free theme, address to <a
                     href="http://www.templatetuning.com/" rel="nofollow" class="col2">Template Tuning </a>
@@ -29,38 +29,38 @@
             </div>
         </div>
         <div class="grid_8">
-            <h3 class="head3">Contact Form</h3>
+            <h3 class="head3" i18n="header for Contact Form|description for Contact Form@@ContactForm">Contact Form</h3>
             <form id="form">
 
                 <div class="success_wrapper">
-                    <div class="success-message">Contact form submitted</div>
+                    <div class="success-message" i18n="header for Contact submitted|description for Contact submitted@@ContactFormSubmitted">Contact form submitted</div>
                 </div>
                 <label class="name">
-                    <input type="text" class="form-control" placeholder="Name:" data-constraints="@Required @JustLetters"/>
-                    <span class="empty-message">*This field is required.</span>
-                    <span class="error-message">*This is not a valid name.</span>
+                    <input type="text" class="form-control" i18n-placeholder="From placeholder" placeholder="Name:" data-constraints="@Required @JustLetters"/>
+                    <span class="empty-message" i18n="header for name required|description for name required@@namerequired">*This field is required.</span>
+                    <span class="error-message" i18n="header for name not valid|description for name not valid@@namenotvalid">*This is not a valid name.</span>
                 </label>
 
                 <label class="email">
-                    <input type="text" class="form-control" placeholder="E-mail:" data-constraints="@Required @Email"/>
-                    <span class="empty-message">*This field is required.</span>
-                    <span class="error-message">*This is not a valid email.</span>
+                    <input type="text" class="form-control" i18n-placeholder="From placeholder" placeholder="E-mail:" data-constraints="@Required @Email"/>
+                    <span class="empty-message" i18n="header for email required|description for email required@@emailrequired">*This field is required.</span>
+                    <span class="error-message" i18n="header for email not valid|description for email not valid@@emailnotvalid">*This is not a valid email.</span>
                 </label>
                 <label class="phone">
-                    <input type="text" class="form-control" placeholder="Phone:" data-constraints="@Required @JustNumbers"/>
-                    <span class="empty-message">*This field is required.</span>
-                    <span class="error-message">*This is not a valid phone.</span>
+                    <input type="text" class="form-control" i18n-placeholder="From placeholder" placeholder="Phone:" data-constraints="@Required @JustNumbers"/>
+                    <span class="empty-message" i18n="header for phone required|description for phone required@@phonerequired">*This field is required.</span>
+                    <span class="error-message" i18n="header for phone not valid|description for phone not valid@@phonenotvalid">*This is not a valid phone.</span>
                 </label>
                 <label class="message">
-                    <textarea class="form-control" placeholder="Message:" data-constraints='@Required @Length(min=20,max=999999)'></textarea>
-                    <span class="empty-message">*This field is required.</span>
-                    <span class="error-message">*The message is too short.</span>
+                    <textarea class="form-control"  i18n-placeholder="From placeholder"placeholder="Message:" data-constraints='@Required @Length(min=20,max=999999)'></textarea>
+                    <span class="empty-message" i18n="header for message required|description for message required@@messagerequired">*This field is required.</span>
+                    <span class="error-message" i18n="header for message to short|description for message to short@@messageShort">*The message is too short.</span>
                 </label>
                 <div>
                     <div class="clear"></div>
                     <div class="btns">
-                        <a href="#" data-type="reset" class="btn">Clear</a>
-                        <a href="#" data-type="submit" class="btn">Send</a></div>
+                        <a href="#" data-type="reset" class="btn" i18n="header for clear|description for clear@@formClear">Clear</a>
+                        <a href="#" data-type="submit" class="btn" i18n="header for Send|description for Send@@formSend">Send</a></div>
                 </div>
             </form>
         </div>
